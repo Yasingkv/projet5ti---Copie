@@ -15,6 +15,21 @@ function selectAllmanga($pdo)
     }
     
 }
+function selectAllGenre($pdo)
+{
+    try {
+        $query = "SELECT * FROM genre";
+        $selectAllGenre = $pdo->prepare($query);
+        $selectAllGenre->execute();
+        $genres = $selectAllGenre->fetchAll();
+        
+        return $genres;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+    
+}
 function deleteAllUserManga ($pdo)
 {
     try {

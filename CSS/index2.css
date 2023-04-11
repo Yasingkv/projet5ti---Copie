@@ -42,3 +42,14 @@ input{
 label{
     color: rgb(0, 38, 255);
 }
+select{
+    background-color: rgb(18, 42, 151);
+    box-shadow: 1px 1px 25px rgb(2, 217, 255);
+    border-radius: 100em;
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    outline: none;
+    padding: .5rem 1.5rem;
+    width: 80%;
+}
