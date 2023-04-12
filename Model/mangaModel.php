@@ -43,6 +43,11 @@ function deleteAllUserManga ($pdo)
         $deleteoptionmanga->execute([
             'utilisateurID' => $_SESSION["user"]->id
         ]);
+        $query = "delete * FROM livre_genre where   livreID in (SELECT livreID from livre_genre where livreID in (SELECT livreID FROM livre where utilisateurID = :utilisateurID);)";
+        $deleteoptionmanga = $pdo->prepare($query);
+        $deleteoptionmanga->execute([
+            'utilisateurID' => $_SESSION["user"]->id
+        ]);
 
     } catch (PDOException $e) {
         $message = $e->getMessage();
